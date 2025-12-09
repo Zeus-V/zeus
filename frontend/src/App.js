@@ -53,6 +53,7 @@ function App() {
               <Route path="/find-jobs" element={<FindJobs />} />
               <Route path="/find-talent" element={<FindTalent />} />
               <Route path="/companies" element={<Companies />} />
+              <Route path="/profile/:id" element={<ProfileDetail />} />
               <Route
                 path="/dashboard"
                 element={
