@@ -1,0 +1,366 @@
+// Mock data for the BIM Talent Hub platform
+
+export const mockProfiles = [
+  {
+    id: 1,
+    name: 'Somchai Pattana',
+    role: 'BIM Manager',
+    bio: 'Experienced BIM Manager with 10+ years in large-scale commercial projects. Specialized in Revit, Navisworks, and BIM 360.',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
+    location: 'Bangkok, Thailand',
+    experience: 10,
+    rating: 4.9,
+    skills: ['Revit', 'Navisworks', 'BIM 360', 'AutoCAD', 'Dynamo', 'Coordination'],
+    portfolioCount: 25
+  },
+  {
+    id: 2,
+    name: 'Pranee Suksawat',
+    role: 'BIM Coordinator',
+    bio: 'Detail-oriented BIM Coordinator focused on MEP coordination and clash detection for high-rise buildings.',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop',
+    location: 'Chiang Mai, Thailand',
+    experience: 6,
+    rating: 4.8,
+    skills: ['Revit MEP', 'Navisworks', 'Clash Detection', 'BIM 360', 'AutoCAD MEP'],
+    portfolioCount: 18
+  },
+  {
+    id: 3,
+    name: 'Nattapong Chaiwong',
+    role: 'BIM Modeler',
+    bio: 'Skilled BIM Modeler specializing in architectural modeling and rendering for residential and commercial projects.',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop',
+    location: 'Phuket, Thailand',
+    experience: 4,
+    rating: 4.7,
+    skills: ['Revit Architecture', '3ds Max', 'SketchUp', 'Lumion', 'Enscape'],
+    portfolioCount: 15
+  },
+  {
+    id: 4,
+    name: 'Siriporn Tanaka',
+    role: 'BIM Manager',
+    bio: 'Strategic BIM Manager with expertise in BIM implementation and team leadership for infrastructure projects.',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop',
+    location: 'Bangkok, Thailand',
+    experience: 12,
+    rating: 5.0,
+    skills: ['Revit', 'Civil 3D', 'BIM 360', 'Project Management', 'ISO 19650'],
+    portfolioCount: 30
+  },
+  {
+    id: 5,
+    name: 'Kittisak Wongsuwan',
+    role: 'BIM Consultant',
+    bio: 'Independent BIM Consultant helping companies implement BIM workflows and train teams.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop',
+    location: 'Remote',
+    experience: 8,
+    rating: 4.9,
+    skills: ['BIM Strategy', 'Training', 'Revit', 'BIM 360', 'Consulting'],
+    portfolioCount: 40
+  },
+  {
+    id: 6,
+    name: 'Apinya Srisuk',
+    role: 'BIM Modeler',
+    bio: 'Creative BIM Modeler with a passion for sustainable architecture and parametric design.',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop',
+    location: 'Bangkok, Thailand',
+    experience: 3,
+    rating: 4.6,
+    skills: ['Revit', 'Grasshopper', 'Rhino', 'Dynamo', 'Sustainable Design'],
+    portfolioCount: 12
+  }
+];
+
+export const mockJobs = [
+  {
+    id: 1,
+    title: 'Senior BIM Manager',
+    company: 'Thai Construction Group',
+    companyLogo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop',
+    description: 'Lead BIM implementation for major commercial projects. Manage team of BIM coordinators and modelers.',
+    location: 'Bangkok',
+    salary: '฿80,000 - ฿120,000/month',
+    type: 'full-time',
+    workMode: 'hybrid',
+    postedAt: '2 days ago',
+    skills: ['Revit', 'BIM 360', 'Navisworks', 'Project Management', 'ISO 19650'],
+    applicants: 24
+  },
+  {
+    id: 2,
+    title: 'BIM Coordinator - MEP',
+    company: 'Bangkok Engineering Co.',
+    companyLogo: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=100&h=100&fit=crop',
+    description: 'Coordinate MEP systems for high-rise residential development. Clash detection and resolution.',
+    location: 'Bangkok',
+    salary: '฿50,000 - ฿70,000/month',
+    type: 'full-time',
+    workMode: 'onSite',
+    postedAt: '5 days ago',
+    skills: ['Revit MEP', 'Navisworks', 'AutoCAD MEP', 'Clash Detection'],
+    applicants: 18
+  },
+  {
+    id: 3,
+    title: 'Freelance BIM Modeler',
+    company: 'Arch Studio Thailand',
+    companyLogo: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=100&h=100&fit=crop',
+    description: 'Create detailed architectural models for luxury villa project. Project-based contract.',
+    location: 'Remote',
+    salary: '฿30,000 - ฿50,000/project',
+    type: 'freelance',
+    workMode: 'remote',
+    postedAt: '1 week ago',
+    skills: ['Revit Architecture', 'SketchUp', 'Lumion', '3D Rendering'],
+    applicants: 35
+  },
+  {
+    id: 4,
+    title: 'BIM Specialist - Infrastructure',
+    company: 'Thai Infrastructure Development',
+    companyLogo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop',
+    description: 'Support BIM implementation for major highway and bridge projects across Thailand.',
+    location: 'Multiple Locations',
+    salary: '฿60,000 - ฿90,000/month',
+    type: 'contract',
+    workMode: 'hybrid',
+    postedAt: '3 days ago',
+    skills: ['Civil 3D', 'Revit', 'InfraWorks', 'BIM 360'],
+    applicants: 12
+  },
+  {
+    id: 5,
+    title: 'Junior BIM Modeler',
+    company: 'Design Plus Co.',
+    companyLogo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop',
+    description: 'Entry-level position for fresh graduates. Training provided. Focus on residential projects.',
+    location: 'Chiang Mai',
+    salary: '฿25,000 - ฿35,000/month',
+    type: 'full-time',
+    workMode: 'onSite',
+    postedAt: '4 days ago',
+    skills: ['Revit', 'AutoCAD', 'SketchUp'],
+    applicants: 45
+  },
+  {
+    id: 6,
+    title: 'BIM Consultant',
+    company: 'BIM Solutions Thailand',
+    companyLogo: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=100&h=100&fit=crop',
+    description: 'Provide BIM consulting services to multiple clients. Help implement BIM workflows and standards.',
+    location: 'Remote',
+    salary: '฿70,000 - ฿100,000/month',
+    type: 'full-time',
+    workMode: 'remote',
+    postedAt: '1 day ago',
+    skills: ['BIM Strategy', 'ISO 19650', 'Training', 'Revit', 'BIM 360'],
+    applicants: 8
+  }
+];
+
+export const mockCompanies = [
+  {
+    id: 1,
+    name: 'Thai Construction Group',
+    logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop',
+    description: 'Leading construction company specializing in commercial and residential developments.',
+    location: 'Bangkok',
+    size: '500-1000',
+    openPositions: 8,
+    industries: ['Commercial', 'Residential', 'Infrastructure']
+  },
+  {
+    id: 2,
+    name: 'Bangkok Engineering Co.',
+    logo: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop',
+    description: 'Full-service engineering firm with expertise in MEP systems for high-rise buildings.',
+    location: 'Bangkok',
+    size: '200-500',
+    openPositions: 5,
+    industries: ['Engineering', 'MEP', 'High-rise']
+  },
+  {
+    id: 3,
+    name: 'Arch Studio Thailand',
+    logo: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=200&fit=crop',
+    description: 'Award-winning architectural design studio focusing on sustainable and modern architecture.',
+    location: 'Bangkok',
+    size: '50-100',
+    openPositions: 3,
+    industries: ['Architecture', 'Design', 'Sustainable']
+  },
+  {
+    id: 4,
+    name: 'Thai Infrastructure Development',
+    logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=200&fit=crop',
+    description: 'Government contractor for major infrastructure projects including highways and bridges.',
+    location: 'Multiple',
+    size: '1000+',
+    openPositions: 12,
+    industries: ['Infrastructure', 'Transportation', 'Government']
+  },
+  {
+    id: 5,
+    name: 'Design Plus Co.',
+    logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop',
+    description: 'Residential design and construction company serving clients across Northern Thailand.',
+    location: 'Chiang Mai',
+    size: '100-200',
+    openPositions: 6,
+    industries: ['Residential', 'Design', 'Construction']
+  },
+  {
+    id: 6,
+    name: 'BIM Solutions Thailand',
+    logo: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop',
+    description: 'BIM consulting firm helping companies implement and optimize BIM workflows.',
+    location: 'Remote',
+    size: '20-50',
+    openPositions: 4,
+    industries: ['Consulting', 'BIM', 'Training']
+  }
+];
+
+export const mockPortfolioProjects = [
+  {
+    id: 1,
+    title: 'Central Plaza Tower - BIM Coordination',
+    description: 'Full BIM coordination for 45-story mixed-use development in Bangkok CBD',
+    image: 'https://images.unsplash.com/photo-1618385455730-2571c38966b7',
+    tags: ['Commercial', 'High-rise', 'MEP Coordination'],
+    author: 'Somchai Pattana',
+    role: 'BIM Manager',
+    software: ['Revit', 'Navisworks', 'BIM 360'],
+    completionDate: '2023',
+    challenges: 'Complex MEP systems with over 50,000 clashes detected and resolved',
+    solution: 'Implemented weekly coordination meetings and automated clash detection workflows'
+  },
+  {
+    id: 2,
+    title: 'Luxury Villa Phuket - Architectural Model',
+    description: 'Detailed architectural BIM model for high-end beachfront villa',
+    image: 'https://images.unsplash.com/photo-1760801802787-86f7958c439e',
+    tags: ['Residential', 'Luxury', 'Architecture'],
+    author: 'Nattapong Chaiwong',
+    role: 'BIM Modeler',
+    software: ['Revit', 'Enscape', 'Lumion'],
+    completionDate: '2024',
+    challenges: 'Complex curved geometries and custom materials',
+    solution: 'Used parametric modeling techniques and custom families'
+  },
+  {
+    id: 3,
+    title: 'Bangkok Metro Extension - Infrastructure BIM',
+    description: 'Infrastructure BIM modeling for 12km metro line extension',
+    image: 'https://images.unsplash.com/photo-1760802049045-5f17c98f387f',
+    tags: ['Infrastructure', 'Transportation', 'Civil'],
+    author: 'Siriporn Tanaka',
+    role: 'BIM Manager',
+    software: ['Civil 3D', 'InfraWorks', 'Revit'],
+    completionDate: '2023',
+    challenges: 'Integration with existing infrastructure and utility coordination',
+    solution: 'Developed comprehensive 3D underground utility mapping'
+  },
+  {
+    id: 4,
+    title: 'Smart Office Building - MEP Systems',
+    description: 'Complete MEP BIM model for intelligent office building',
+    image: 'https://images.unsplash.com/photo-1765162308598-e67b089969c6',
+    tags: ['Commercial', 'MEP', 'Smart Building'],
+    author: 'Pranee Suksawat',
+    role: 'BIM Coordinator',
+    software: ['Revit MEP', 'Navisworks', 'AutoCAD MEP'],
+    completionDate: '2024',
+    challenges: 'Integration of IoT sensors and building automation systems',
+    solution: 'Created custom MEP families with embedded sensor data'
+  },
+  {
+    id: 5,
+    title: 'Hospital Complex - BIM Implementation',
+    description: 'BIM implementation strategy and execution for 500-bed hospital',
+    image: 'https://images.unsplash.com/photo-1721244654394-36a7bc2da288',
+    tags: ['Healthcare', 'Large-scale', 'Implementation'],
+    author: 'Kittisak Wongsuwan',
+    role: 'BIM Consultant',
+    software: ['Revit', 'BIM 360', 'Navisworks'],
+    completionDate: '2023',
+    challenges: 'Complex medical gas systems and strict code compliance',
+    solution: 'Developed detailed BIM execution plan with phased delivery'
+  },
+  {
+    id: 6,
+    title: 'Sustainable Housing Project',
+    description: 'Eco-friendly residential development with passive design strategies',
+    image: 'https://images.unsplash.com/photo-1742415106160-594d07f6cc23',
+    tags: ['Residential', 'Sustainable', 'Green Building'],
+    author: 'Apinya Srisuk',
+    role: 'BIM Modeler',
+    software: ['Revit', 'Grasshopper', 'Ladybug'],
+    completionDate: '2024',
+    challenges: 'Energy optimization and daylighting analysis',
+    solution: 'Used parametric design for solar orientation and natural ventilation'
+  },
+  {
+    id: 7,
+    title: 'Shopping Mall Renovation',
+    description: 'BIM-based renovation planning for existing shopping center',
+    image: 'https://images.unsplash.com/photo-1618385455730-2571c38966b7',
+    tags: ['Commercial', 'Renovation', 'Retail'],
+    author: 'Somchai Pattana',
+    role: 'BIM Manager',
+    software: ['Revit', 'ReCap', 'BIM 360'],
+    completionDate: '2023',
+    challenges: 'Accurate as-built documentation of existing structure',
+    solution: '3D laser scanning integrated with BIM model'
+  },
+  {
+    id: 8,
+    title: 'Industrial Warehouse - Structural BIM',
+    description: 'Structural steel modeling for large industrial facility',
+    image: 'https://images.unsplash.com/photo-1760801802787-86f7958c439e',
+    tags: ['Industrial', 'Structural', 'Steel'],
+    author: 'Nattapong Chaiwong',
+    role: 'BIM Modeler',
+    software: ['Revit Structure', 'Tekla', 'AutoCAD'],
+    completionDate: '2024',
+    challenges: 'Complex steel connections and fabrication detailing',
+    solution: 'Coordinated with fabricators using Tekla for shop drawings'
+  }
+];
+
+export const mockApplications = [
+  {
+    id: 1,
+    candidateId: 1,
+    jobId: 1,
+    status: 'pending',
+    appliedDate: '2024-01-10',
+    skillsMatch: 95,
+    experienceScore: 90,
+    portfolioQuality: 92
+  },
+  {
+    id: 2,
+    candidateId: 2,
+    jobId: 1,
+    status: 'shortlisted',
+    appliedDate: '2024-01-08',
+    skillsMatch: 88,
+    experienceScore: 75,
+    portfolioQuality: 85
+  },
+  {
+    id: 3,
+    candidateId: 3,
+    jobId: 1,
+    status: 'pending',
+    appliedDate: '2024-01-12',
+    skillsMatch: 70,
+    experienceScore: 60,
+    portfolioQuality: 78
+  }
+];
