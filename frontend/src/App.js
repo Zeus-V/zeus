@@ -13,6 +13,7 @@ import FindJobs from './pages/FindJobs';
 import FindTalent from './pages/FindTalent';
 import Companies from './pages/Companies';
 import Dashboard from './pages/Dashboard';
+import ProfileDetail from './pages/ProfileDetail';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
