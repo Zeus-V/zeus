@@ -17,6 +17,7 @@ import ProfileDetail from './pages/ProfileDetail';
 import ProjectDetail from './pages/ProjectDetail';
 import CompanyDetail from './pages/CompanyDetail';
 import Pricing from './pages/Pricing';
+import JobDetail from './pages/JobDetail';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
