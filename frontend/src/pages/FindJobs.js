@@ -35,15 +35,22 @@ export default function FindJobs() {
   };
   
   return (
-    <div className="min-h-screen py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <div className="min-h-screen py-8 blueprint-grid relative">
+      {/* Construction Tech Background Accent */}
+      <div className="absolute inset-0 data-viz-gradient pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header with Construction Theme */}
         <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full construction-glass mb-4">
+            <Briefcase className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-primary">BIM Construction Careers</span>
+          </div>
+          <h1 className="text-4xl font-bold text-foreground mb-4 tech-heading high-contrast">
             {t('findJobs')}
           </h1>
           <p className="text-lg text-muted-foreground">
-            Discover BIM opportunities across Thailand
+            Discover cutting-edge BIM opportunities across Thailand's construction industry
           </p>
         </div>
         
