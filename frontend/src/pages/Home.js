@@ -66,70 +66,120 @@ export default function Home() {
   
   const featuredProjects = mockPortfolioProjects.slice(0, 6);
   
+  // Search categories
+  const searchCategories = [
+    { id: 'projects', label: 'Projects', icon: Building2, placeholder: 'Search BIM projects, buildings, infrastructure...' },
+    { id: 'jobs', label: 'Jobs', icon: Briefcase, placeholder: 'Search BIM jobs, positions, opportunities...' },
+    { id: 'people', label: 'People', icon: Users, placeholder: 'Search BIM professionals, modelers, coordinators...' },
+    { id: 'companies', label: 'Companies', icon: Building2, placeholder: 'Search construction companies, firms...' }
+  ];
+
+  const activeCategory = searchCategories.find(cat => cat.id === activeTab);
+  
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+    <div className="min-h-screen bg-gradient-to-br from-[#1a1a1a] via-[#0f0f0f] to-[#1a1a1a]">
+      {/* Hero Section with Behance-inspired Search */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* Dark Construction Background */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1618385455730-2571c38966b7"
-            alt="BIM workspace"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
-          <div className="absolute inset-0 gradient-mesh opacity-40" />
+          {/* Grid Pattern Overlay */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }} />
+          
+          {/* Construction-themed gradient overlays */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl" />
         </div>
         
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              {t('heroTitle')}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="animate-fade-in text-center mb-12">
+            {/* Construction-themed title */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-medium text-primary">BIM & Construction Technology Platform</span>
+            </div>
+            
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Build the Future of
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-glow to-orange-400">
+                Construction Technology
+              </span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              {t('heroSubtitle')}
+            <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+              Discover BIM professionals, explore innovative projects, and connect with industry leaders
             </p>
+          </div>
+          
+          {/* Behance-inspired Search with Category Tabs */}
+          <div className="max-w-4xl mx-auto">
+            {/* Category Tabs */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              {searchCategories.map((category) => {
+                const Icon = category.icon;
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveTab(category.id)}
+                    className={`px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
+                      activeTab === category.id
+                        ? 'bg-primary text-white shadow-lg shadow-primary/25'
+                        : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white backdrop-blur-sm'
+                    }`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    {category.label}
+                  </button>
+                );
+              })}
+            </div>
             
             {/* Search Bar */}
-            <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-8">
-              <div className="glass-strong rounded-2xl p-2 flex items-center gap-2 shadow-glass-lg">
-                <Search className="h-5 w-5 text-muted-foreground ml-4" />
-                <input
-                  type="text"
-                  placeholder={t('searchPlaceholder')}
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground px-2 py-3"
-                />
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90"
-                >
-                  {t('searchButton')}
-                </Button>
+            <form onSubmit={handleSearch} className="relative">
+              <div className="relative bg-[#1a1a1a] border border-white/10 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center">
+                  <div className="pl-6 pr-4 py-4">
+                    <Search className="h-6 w-6 text-gray-500" />
+                  </div>
+                  <input
+                    type="text"
+                    placeholder={activeCategory?.placeholder || 'Search...'}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-gray-500 py-4 text-lg"
+                  />
+                  <div className="pr-3 py-3">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 px-8"
+                    >
+                      Search
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Popular Searches */}
+              <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
+                <span className="text-sm text-gray-500">Popular:</span>
+                {['BIM Manager', 'Revit', 'High-Rise', 'MEP Coordination', 'Infrastructure'].map((term) => (
+                  <button
+                    key={term}
+                    onClick={() => setSearchQuery(term)}
+                    className="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white text-sm transition-smooth border border-white/5"
+                  >
+                    {term}
+                  </button>
+                ))}
               </div>
             </form>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                onClick={() => navigate('/find-jobs')}
-                className="bg-primary hover:bg-primary/90 min-w-[200px]"
-              >
-                {t('findJobs')}
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => navigate('/find-talent')}
-                className="glass-strong min-w-[200px]"
-              >
-                {t('findTalent')}
-              </Button>
-            </div>
           </div>
         </div>
       </section>
