@@ -76,6 +76,15 @@ export default function Pricing() {
 
   const pricingTiers = [
     {
+      id: 'free',
+      name: 'Free',
+      description: 'Get started for free',
+      plan: 'free',
+      isFree: true,
+      highlighted: false,
+      targetAudience: 'Starter'
+    },
+    {
       id: 'basic',
       name: 'Basic',
       description: 'Perfect for job seekers',
