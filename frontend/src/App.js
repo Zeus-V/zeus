@@ -15,6 +15,7 @@ import Companies from './pages/Companies';
 import Dashboard from './pages/Dashboard';
 import ProfileDetail from './pages/ProfileDetail';
 import ProjectDetail from './pages/ProjectDetail';
+import CompanyDetail from './pages/CompanyDetail';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
