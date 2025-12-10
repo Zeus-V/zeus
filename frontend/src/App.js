@@ -56,6 +56,7 @@ function App() {
               <Route path="/find-jobs" element={<FindJobs />} />
               <Route path="/find-talent" element={<FindTalent />} />
               <Route path="/companies" element={<Companies />} />
+              <Route path="/pricing" element={<Pricing />} />
               <Route path="/profile/:id" element={<ProfileDetail />} />
               <Route path="/portfolio/:id" element={<ProjectDetail />} />
               <Route path="/company/:id" element={<CompanyDetail />} />
