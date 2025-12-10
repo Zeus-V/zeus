@@ -31,6 +31,7 @@ export default function Home() {
           break;
         default:
           navigate(`/find-jobs?q=${encodeURIComponent(searchQuery)}`);
+      }
     }
   };
   
