@@ -15,6 +15,34 @@ export default function Home() {
   const [filteredProjects, setFilteredProjects] = useState(mockPortfolioProjects.slice(0, 6));
   const [isSearchActive, setIsSearchActive] = useState(false);
   
+  // Handle URL search params on page load
+  useEffect(() => {
+    const query = searchParams.get('q');
+    if (query) {
+      setSearchQuery(query);
+      setIsSearchActive(true);
+      filterProjects(query);
+    } else {
+      setIsSearchActive(false);
+      setFilteredProjects(mockPortfolioProjects.slice(0, 6));
+    }
+  }, [searchParams]);
+
+  const filterProjects = (query) => {
+    if (!query.trim()) {
+      setFilteredProjects(mockPortfolioProjects.slice(0, 6));
+      return;
+    }
+
+    const filtered = mockPortfolioProjects.filter(project =>
+      project.title.toLowerCase().includes(query.toLowerCase()) ||
+      project.description.toLowerCase().includes(query.toLowerCase()) ||
+      project.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+    );
+    
+    setFilteredProjects(filtered);
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -27,6 +55,8 @@ export default function Home() {
           navigate(`/find-talent?q=${encodeURIComponent(searchQuery)}`);
           break;
         case 'projects':
+          setIsSearchActive(true);
+          filterProjects(searchQuery);
           navigate(`/?q=${encodeURIComponent(searchQuery)}`);
           break;
         case 'companies':
@@ -36,6 +66,13 @@ export default function Home() {
           navigate(`/find-jobs?q=${encodeURIComponent(searchQuery)}`);
       }
     }
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    setIsSearchActive(false);
+    setFilteredProjects(mockPortfolioProjects.slice(0, 6));
+    navigate('/');
   };
   
   const stats = [
