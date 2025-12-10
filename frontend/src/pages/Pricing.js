@@ -165,7 +165,7 @@ export default function Pricing() {
                 key={tier.id}
                 className={`glass rounded-2xl p-8 hover:shadow-glass-lg transition-all duration-300 animate-fade-in ${
                   tier.highlighted ? 'ring-2 ring-primary scale-105' : ''
-                }`}
+                } ${tier.isFree ? 'bg-muted/30' : ''}`}
               >
                 {tier.highlighted && (
                   <div className="inline-flex px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4">
@@ -180,26 +180,37 @@ export default function Pricing() {
                 </div>
 
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-foreground">
-                      ฿{(plan.price / (billingCycle === 'annual' ? 12 : 1)).toLocaleString('en-US', { maximumFractionDigits: 0 })}
-                    </span>
-                    <span className="text-muted-foreground">/month</span>
-                  </div>
-                  {billingCycle === 'annual' && (
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Billed ฿{plan.price.toLocaleString()} annually
-                    </p>
+                  {tier.isFree ? (
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl font-bold text-foreground">Free</span>
+                      <span className="text-muted-foreground">forever</span>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-bold text-foreground">
+                          ฿{(plan.price / (billingCycle === 'annual' ? 12 : 1)).toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                        </span>
+                        <span className="text-muted-foreground">/month</span>
+                      </div>
+                      {billingCycle === 'annual' && !tier.isFree && (
+                        <p className="text-sm text-muted-foreground mt-1">
+                          Billed ฿{plan.price.toLocaleString()} annually
+                        </p>
+                      )}
+                    </>
                   )}
                 </div>
 
                 <Button
-                  onClick={() => handleSubscribe(planId)}
+                  onClick={() => tier.isFree ? navigate('/signup') : handleSubscribe(planId)}
                   disabled={loading[planId]}
                   className={`w-full mb-6 ${
                     tier.highlighted
                       ? 'bg-primary hover:bg-primary/90'
-                      : 'bg-muted hover:bg-muted/80 text-foreground'
+                      : tier.isFree 
+                        ? 'bg-secondary hover:bg-secondary/90 text-secondary-foreground'
+                        : 'bg-muted hover:bg-muted/80 text-foreground'
                   }`}
                 >
                   {loading[planId] ? (
@@ -207,6 +218,8 @@ export default function Pricing() {
                       <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                       Processing...
                     </>
+                  ) : tier.isFree ? (
+                    'Get Started Free'
                   ) : (
                     'Subscribe Now'
                   )}
@@ -219,6 +232,18 @@ export default function Pricing() {
                       <span className="text-sm text-muted-foreground">{feature}</span>
                     </div>
                   ))}
+                  
+                  {/* Show upgrade prompts for free plan */}
+                  {tier.isFree && plan.limitations && (
+                    <div className="mt-6 pt-6 border-t border-border">
+                      <p className="text-xs text-muted-foreground mb-3 font-semibold">Upgrade to unlock:</p>
+                      {plan.limitations.slice(0, 3).map((limitation, index) => (
+                        <div key={index} className="flex items-start gap-2 mb-2">
+                          <span className="text-xs text-muted-foreground opacity-60">• {limitation}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             );
