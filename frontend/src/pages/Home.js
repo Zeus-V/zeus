@@ -379,17 +379,28 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
           
           <div className="text-center mt-12 lg:hidden">
-            <Button
-              size="lg"
-              onClick={() => navigate('/find-talent')}
-              className="bg-white/5 border border-white/10 text-white hover:bg-white/10"
-            >
-              View All Projects
-            </Button>
+            {isSearchActive ? (
+              <Button
+                size="lg"
+                onClick={clearSearch}
+                className="bg-white/5 border border-white/10 text-white hover:bg-white/10"
+              >
+                Clear Search
+              </Button>
+            ) : (
+              <Button
+                size="lg"
+                onClick={() => navigate('/find-talent')}
+                className="bg-white/5 border border-white/10 text-white hover:bg-white/10"
+              >
+                View All Projects
+              </Button>
+            )}
           </div>
         </div>
       </section>
