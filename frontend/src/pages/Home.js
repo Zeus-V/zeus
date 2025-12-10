@@ -247,36 +247,70 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Featured Portfolios Section */}
-      <section className="py-20 bg-muted/30">
+      {/* Featured Portfolios Section - Behance-inspired Dark Grid */}
+      <section className="py-24 bg-black/30 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore outstanding BIM projects from our talented community
-            </p>
-          </div>
-          
-          {/* Masonry Grid */}
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {featuredProjects.map((project, index) => (
-              <div key={project.id} className="break-inside-avoid">
-                <PortfolioCard
-                  project={project}
-                  height={index % 3 === 0 ? '400px' : index % 3 === 1 ? '320px' : '360px'}
-                />
+          <div className="flex items-center justify-between mb-12 animate-fade-in">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                <span className="text-sm font-medium text-orange-400">Featured Work</span>
               </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2">
+                Outstanding BIM Projects
+              </h2>
+              <p className="text-xl text-gray-400">
+                Explore innovative construction projects from our community
+              </p>
+            </div>
             <Button
               size="lg"
               variant="outline"
               onClick={() => navigate('/find-talent')}
-              className="glass-strong"
+              className="hidden lg:flex bg-white/5 border-white/10 text-white hover:bg-white/10"
+            >
+              View All Projects
+            </Button>
+          </div>
+          
+          {/* Behance-style Masonry Grid with Dark Theme */}
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {featuredProjects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className="break-inside-avoid animate-fade-in group"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <div className="relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10 hover:border-primary/50 transition-all duration-300">
+                  <div className="relative" style={{ height: index % 3 === 0 ? '400px' : index % 3 === 1 ? '320px' : '360px' }}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                        <p className="text-sm text-gray-300 line-clamp-2 mb-3">{project.description}</p>
+                        <div className="flex items-center gap-2">
+                          {project.tags.slice(0, 2).map((tag, idx) => (
+                            <span key={idx} className="px-2 py-1 text-xs font-medium rounded-md bg-white/10 text-white border border-white/20">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12 lg:hidden">
+            <Button
+              size="lg"
+              onClick={() => navigate('/find-talent')}
+              className="bg-white/5 border border-white/10 text-white hover:bg-white/10"
             >
               View All Projects
             </Button>
