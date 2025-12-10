@@ -318,33 +318,67 @@ export default function Home() {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh opacity-20" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="glass-strong rounded-3xl p-12 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of BIM professionals and companies finding success on our platform
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                onClick={() => navigate('/signup')}
-                className="bg-primary hover:bg-primary/90 min-w-[200px]"
-              >
-                {t('getStarted')}
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => navigate('/about')}
-                className="glass min-w-[200px]"
-              >
-                {t('learnMore')}
-              </Button>
+      {/* CTA Section - Construction Tech Theme */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-orange-500/10 to-primary/20 blur-3xl" />
+        </div>
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-3xl p-12 sm:p-16 text-center animate-fade-in relative overflow-hidden">
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 opacity-10" style={{
+              backgroundImage: `
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '30px 30px'
+            }} />
+            
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-sm font-medium text-primary">Join the Community</span>
+              </div>
+              
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                Ready to Build Your Future?
+              </h2>
+              <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Join 1,500+ BIM professionals and 120+ companies shaping the future of construction technology
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  size="lg"
+                  onClick={() => navigate('/signup')}
+                  className="bg-primary hover:bg-primary/90 min-w-[200px] shadow-lg shadow-primary/25"
+                >
+                  Get Started Free
+                </Button>
+                <Button
+                  size="lg"
+                  onClick={() => navigate('/pricing')}
+                  className="bg-white/5 border border-white/10 text-white hover:bg-white/10 min-w-[200px]"
+                >
+                  View Pricing
+                </Button>
+              </div>
+              
+              {/* Trust indicators */}
+              <div className="mt-10 flex items-center justify-center gap-8 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <span>Free to join</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <span>No credit card required</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <span>Cancel anytime</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
