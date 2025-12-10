@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Search, Users, Briefcase, Building2, TrendingUp, CheckCircle, Globe, Award, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from '../components/ui/button';
@@ -9,8 +9,11 @@ import { mockPortfolioProjects } from '../data/mockData';
 export default function Home() {
   const { t } = useLanguage();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('projects');
+  const [filteredProjects, setFilteredProjects] = useState(mockPortfolioProjects.slice(0, 6));
+  const [isSearchActive, setIsSearchActive] = useState(false);
   
   const handleSearch = (e) => {
     e.preventDefault();
