@@ -10,11 +10,27 @@ export default function Home() {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeTab, setActiveTab] = useState('projects');
   
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/find-jobs?q=${encodeURIComponent(searchQuery)}`);
+      // Navigate based on active tab
+      switch (activeTab) {
+        case 'jobs':
+          navigate(`/find-jobs?q=${encodeURIComponent(searchQuery)}`);
+          break;
+        case 'people':
+          navigate(`/find-talent?q=${encodeURIComponent(searchQuery)}`);
+          break;
+        case 'projects':
+          navigate(`/?q=${encodeURIComponent(searchQuery)}`);
+          break;
+        case 'companies':
+          navigate(`/companies?q=${encodeURIComponent(searchQuery)}`);
+          break;
+        default:
+          navigate(`/find-jobs?q=${encodeURIComponent(searchQuery)}`);
     }
   };
   
