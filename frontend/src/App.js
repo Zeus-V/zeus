@@ -57,6 +57,7 @@ function App() {
               <Route path="/companies" element={<Companies />} />
               <Route path="/profile/:id" element={<ProfileDetail />} />
               <Route path="/portfolio/:id" element={<ProjectDetail />} />
+              <Route path="/company/:id" element={<CompanyDetail />} />
               <Route
                 path="/dashboard"
                 element={
