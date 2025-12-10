@@ -137,6 +137,13 @@ export const Header = () => {
             >
               {t('companies')}
             </Link>
+            <Link
+              to="/pricing"
+              className="block px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-lg transition-smooth"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
+            </Link>
             
             <div className="pt-3 border-t border-white/10 space-y-2">
               <Button
