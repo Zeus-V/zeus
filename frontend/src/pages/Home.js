@@ -105,8 +105,6 @@ export default function Home() {
     }
   ];
   
-  const featuredProjects = mockPortfolioProjects.slice(0, 6);
-  
   // Search categories
   const searchCategories = [
     { id: 'projects', label: 'Projects', icon: Building2, placeholder: 'Search BIM projects, buildings, infrastructure...' },
