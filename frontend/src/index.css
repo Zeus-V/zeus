@@ -209,4 +209,147 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary) / 0.5);
   }
+  
+  /* Construction Technology Theme Utilities */
+  
+  /* Blueprint Grid Pattern */
+  .blueprint-grid {
+    background-image: 
+      linear-gradient(rgba(13, 127, 191, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13, 127, 191, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .blueprint-grid-dense {
+    background-image: 
+      linear-gradient(rgba(13, 127, 191, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13, 127, 191, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Construction Tech Gradients */
+  .construction-gradient {
+    background: linear-gradient(135deg, 
+      hsl(220 15% 8%) 0%, 
+      hsl(220 15% 12%) 50%, 
+      hsl(220 15% 8%) 100%
+    );
+  }
+  
+  .tech-gradient-blue {
+    background: linear-gradient(135deg, 
+      hsl(199 89% 48%) 0%, 
+      hsl(204 100% 45%) 100%
+    );
+  }
+  
+  .tech-gradient-orange {
+    background: linear-gradient(135deg, 
+      hsl(27 96% 61%) 0%, 
+      hsl(38 92% 50%) 100%
+    );
+  }
+  
+  /* Dark Glass for Construction Theme */
+  .construction-glass {
+    background: rgba(24, 28, 32, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(13, 127, 191, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  
+  .construction-glass-strong {
+    background: rgba(24, 28, 32, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(13, 127, 191, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  /* CAD/Blueprint Style Lines */
+  .blueprint-accent {
+    position: relative;
+  }
+  
+  .blueprint-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--blueprint)) 50%, 
+      transparent 100%
+    );
+  }
+  
+  /* Construction Tech Shadows */
+  .tech-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.3),
+      0 2px 4px -1px rgba(13, 127, 191, 0.1);
+  }
+  
+  .tech-shadow-lg {
+    box-shadow: 
+      0 10px 15px -3px rgba(0, 0, 0, 0.4),
+      0 4px 6px -2px rgba(13, 127, 191, 0.15);
+  }
+  
+  /* Animated Construction Elements */
+  @keyframes blueprint-scan {
+    0%, 100% {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(-4px);
+    }
+  }
+  
+  .blueprint-pulse {
+    animation: blueprint-scan 3s ease-in-out infinite;
+  }
+  
+  /* Construction Orange Accents */
+  .accent-construction {
+    color: hsl(var(--accent));
+  }
+  
+  .bg-construction-accent {
+    background-color: hsl(var(--accent) / 0.1);
+    border-left: 3px solid hsl(var(--accent));
+  }
+  
+  /* Tech Typography */
+  .tech-heading {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  .tech-mono {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: hsl(var(--blueprint));
+  }
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    color: hsl(0 0% 100%);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Construction Data Visualization Accents */
+  .data-viz-gradient {
+    background: linear-gradient(180deg,
+      hsl(199 89% 48% / 0.2) 0%,
+      hsl(204 100% 45% / 0.1) 50%,
+      transparent 100%
+    );
+  }
 }
