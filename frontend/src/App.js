@@ -16,6 +16,7 @@ import Dashboard from './pages/Dashboard';
 import ProfileDetail from './pages/ProfileDetail';
 import ProjectDetail from './pages/ProjectDetail';
 import CompanyDetail from './pages/CompanyDetail';
+import Pricing from './pages/Pricing';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
