@@ -154,9 +154,10 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {pricingTiers.map((tier) => {
-            const planId = billingCycle === 'monthly' ? tier.monthlyPlan : tier.annualPlan;
+            // Handle free plan separately
+            const planId = tier.isFree ? 'free' : (billingCycle === 'monthly' ? tier.monthlyPlan : tier.annualPlan);
             const plan = plans[planId];
             
             return (
