@@ -31,15 +31,22 @@ export default function Companies() {
   };
   
   return (
-    <div className="min-h-screen py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <div className="min-h-screen py-8 blueprint-grid relative">
+      {/* Construction Tech Background */}
+      <div className="absolute inset-0 construction-gradient pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header with Construction Tech Theme */}
         <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full construction-glass mb-4">
+            <Building2 className="h-4 w-4 text-accent" />
+            <span className="text-sm font-medium text-accent">Construction Tech Leaders</span>
+          </div>
+          <h1 className="text-4xl font-bold text-foreground mb-4 tech-heading high-contrast">
             {t('companies')}
           </h1>
           <p className="text-lg text-muted-foreground">
-            Explore companies hiring BIM professionals
+            Explore industry-leading companies transforming construction with BIM technology
           </p>
         </div>
         
