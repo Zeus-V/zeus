@@ -292,28 +292,65 @@ export default function Home() {
           <div className="flex items-center justify-between mb-12 animate-fade-in">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
-                <span className="text-sm font-medium text-orange-400">Featured Work</span>
+                <span className="text-sm font-medium text-orange-400">
+                  {isSearchActive ? 'Search Results' : 'Featured Work'}
+                </span>
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2">
-                Outstanding BIM Projects
+                {isSearchActive ? `Projects matching "${searchQuery}"` : 'Outstanding BIM Projects'}
               </h2>
               <p className="text-xl text-gray-400">
-                Explore innovative construction projects from our community
+                {isSearchActive 
+                  ? `Found ${filteredProjects.length} project${filteredProjects.length !== 1 ? 's' : ''}`
+                  : 'Explore innovative construction projects from our community'
+                }
               </p>
             </div>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => navigate('/find-talent')}
-              className="hidden lg:flex bg-white/5 border-white/10 text-white hover:bg-white/10"
-            >
-              View All Projects
-            </Button>
+            {isSearchActive ? (
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={clearSearch}
+                className="hidden lg:flex bg-white/5 border-white/10 text-white hover:bg-white/10"
+              >
+                Clear Search
+              </Button>
+            ) : (
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => navigate('/find-talent')}
+                className="hidden lg:flex bg-white/5 border-white/10 text-white hover:bg-white/10"
+              >
+                View All Projects
+              </Button>
+            )}
           </div>
           
+          {/* No Results Message */}
+          {isSearchActive && filteredProjects.length === 0 && (
+            <div className="text-center py-20">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/5 border border-white/10 mb-6">
+                <Search className="h-10 w-10 text-gray-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">No projects found</h3>
+              <p className="text-gray-400 mb-6">
+                We couldn't find any projects matching "{searchQuery}"
+              </p>
+              <Button
+                size="lg"
+                onClick={clearSearch}
+                className="bg-primary hover:bg-primary/90"
+              >
+                Clear Search
+              </Button>
+            </div>
+          )}
+          
           {/* Behance-style Masonry Grid with Dark Theme */}
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {featuredProjects.map((project, index) => (
+          {filteredProjects.length > 0 && (
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+              {filteredProjects.map((project, index) => (
               <div 
                 key={project.id} 
                 className="break-inside-avoid animate-fade-in group"
