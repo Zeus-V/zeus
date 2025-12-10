@@ -14,6 +14,27 @@ logger = logging.getLogger(__name__)
 
 # Subscription Plans Configuration for Thailand Market
 SUBSCRIPTION_PLANS = {
+    'free': {
+        'name': 'Free Plan',
+        'description': 'Get started with BIM Talent Hub',
+        'price': 0,
+        'currency': 'thb',
+        'interval': 'forever',
+        'features': [
+            'Create basic profile',
+            'Apply to up to 5 jobs per month',
+            'Browse all job listings',
+            'Basic portfolio (2 projects)',
+            'Community support'
+        ],
+        'limitations': [
+            'Limited to 5 job applications/month',
+            'No featured listings',
+            'No analytics',
+            'No direct messaging',
+            'Standard search only'
+        ]
+    },
     'basic_monthly': {
         'name': 'Basic Plan - Monthly',
         'description': 'Perfect for job seekers',
