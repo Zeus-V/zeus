@@ -213,22 +213,6 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Google Maps - Our Locations */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Visit Our Offices
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We have offices across Thailand to serve you better. Find the nearest location to connect with our team.
-            </p>
-          </div>
-          
-          <GoogleMapsCard />
-        </div>
-      </section>
-      
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 gradient-mesh opacity-20" />
