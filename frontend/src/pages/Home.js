@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Users, Briefcase, Building2, TrendingUp, CheckCircle, Globe, Award } from 'lucide-react';
+import { Search, Users, Briefcase, Building2, TrendingUp, CheckCircle, Globe, Award, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from '../components/ui/button';
 import { PortfolioCard } from '../components/PortfolioCard';
