@@ -58,6 +58,13 @@ export default function Home() {
           setIsSearchActive(true);
           filterProjects(searchQuery);
           navigate(`/?q=${encodeURIComponent(searchQuery)}`);
+          // Scroll to results section after a brief delay
+          setTimeout(() => {
+            const resultsSection = document.querySelector('.py-24.bg-black\\/30');
+            if (resultsSection) {
+              resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
           break;
         case 'companies':
           navigate(`/companies?q=${encodeURIComponent(searchQuery)}`);
