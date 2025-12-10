@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the BIM Talent Hub platform comprehensively. The application should be available at http://localhost:3000"
+user_problem_statement: "Test the homepage project search functionality thoroughly with specific test scenarios including basic search flow, clear search functionality, no results handling, different search terms, and category tab navigation."
 
 frontend:
   - task: "Homepage Navigation"
