@@ -208,15 +208,21 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Features Section - Dark Construction Theme */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background accent */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              {t('featuresTitle')}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+              <span className="text-sm font-medium text-primary">Platform Features</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Why Choose BIM Talent Hub?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover why BIM professionals and companies trust our platform
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Industry-leading platform trusted by construction professionals
             </p>
           </div>
           
@@ -226,14 +232,14 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="glass rounded-2xl p-6 hover:shadow-glass-lg transition-all duration-300 hover:scale-105 animate-fade-in"
+                  className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 hover:translate-y-[-4px] animate-fade-in group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-orange-500/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-sm text-gray-400">{feature.description}</p>
                 </div>
               );
             })}
