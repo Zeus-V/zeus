@@ -239,6 +239,56 @@ export default function CompanyDetail() {
                 ))}
               </div>
             </div>
+            
+            {/* Google Maps Location */}
+            <div className="glass rounded-2xl p-6 animate-fade-in">
+              <div className="flex items-center gap-2 mb-6">
+                <MapPin className="h-6 w-6 text-primary" />
+                <h2 className="text-2xl font-bold text-foreground">Our Location</h2>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="text-sm text-muted-foreground">
+                  <p className="font-medium text-foreground mb-1">{company.name}</p>
+                  <p>123 Sukhumvit Road, Khlong Toei</p>
+                  <p>{company.location}, 10110</p>
+                  <p>Thailand</p>
+                </div>
+                
+                {/* Google Maps Embed */}
+                <div className="relative w-full h-[400px] rounded-xl overflow-hidden glass-subtle">
+                  <iframe
+                    title={`${company.name} Location`}
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.9747919439317!2d100.55924431483044!3d13.736717190353844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee109d8f4e3%3A0x2b2a12e0ec4b857c!2sSukhumvit%20Rd%2C%20Khlong%20Toei%2C%20Bangkok%2010110!5e0!3m2!1sen!2sth!4v1234567890123!5m2!1sen!2sth"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-xl"
+                  />
+                  
+                  {/* Fallback for map loading error */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-muted/10 pointer-events-none">
+                    <div className="text-center p-4">
+                      <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-2 opacity-20" />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Direction Link */}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.name + ' ' + company.location + ' Thailand')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-smooth"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
           </div>
           
           {/* Right Column - Sidebar */}
