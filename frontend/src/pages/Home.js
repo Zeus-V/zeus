@@ -184,8 +184,8 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Stats Section */}
-      <section className="py-12 border-y border-border/50 bg-muted/30">
+      {/* Stats Section - Dark Construction Theme */}
+      <section className="py-16 border-y border-white/5 bg-black/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
@@ -193,14 +193,14 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="text-center animate-fade-in"
+                  className="text-center animate-fade-in group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-3">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-orange-500/10 border border-primary/20 mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="h-7 w-7 text-primary" />
                   </div>
-                  <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               );
             })}
