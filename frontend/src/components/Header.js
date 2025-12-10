@@ -42,6 +42,9 @@ export const Header = () => {
             <Link to="/companies" className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth">
               {t('companies')}
             </Link>
+            <Link to="/pricing" className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth">
+              Pricing
+            </Link>
           </div>
           
           {/* Right Actions */}
