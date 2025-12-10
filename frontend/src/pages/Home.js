@@ -22,6 +22,13 @@ export default function Home() {
       setSearchQuery(query);
       setIsSearchActive(true);
       filterProjects(query);
+      // Auto-scroll to results section when search query exists
+      setTimeout(() => {
+        const resultsSection = document.querySelector('.py-24.bg-black\\/30');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
     } else {
       setIsSearchActive(false);
       setFilteredProjects(mockPortfolioProjects.slice(0, 6));
