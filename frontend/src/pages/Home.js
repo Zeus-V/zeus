@@ -367,8 +367,9 @@ export default function Home() {
               {filteredProjects.map((project, index) => (
               <div 
                 key={project.id} 
-                className="break-inside-avoid animate-fade-in group"
+                className="break-inside-avoid animate-fade-in group cursor-pointer"
                 style={{ animationDelay: `${index * 50}ms` }}
+                onClick={() => navigate(`/portfolio/${project.id}`)}
               >
                 <div className="relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10 hover:border-primary/50 transition-all duration-300">
                   <div className="relative" style={{ height: index % 3 === 0 ? '400px' : index % 3 === 1 ? '320px' : '360px' }}>
@@ -381,12 +382,18 @@ export default function Home() {
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
                         <p className="text-sm text-gray-300 line-clamp-2 mb-3">{project.description}</p>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 mb-4">
                           {project.tags.slice(0, 2).map((tag, idx) => (
                             <span key={idx} className="px-2 py-1 text-xs font-medium rounded-md bg-white/10 text-white border border-white/20">
                               {tag}
                             </span>
                           ))}
+                        </div>
+                        <div className="inline-flex items-center gap-2 text-primary text-sm font-medium">
+                          <span>View Details</span>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
                         </div>
                       </div>
                     </div>
