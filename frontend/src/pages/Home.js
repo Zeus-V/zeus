@@ -4,6 +4,7 @@ import { Search, Users, Briefcase, Building2, TrendingUp, CheckCircle, Globe, Aw
 import { useLanguage } from '../context/LanguageContext';
 import { Button } from '../components/ui/button';
 import { PortfolioCard } from '../components/PortfolioCard';
+import { AIAssistant } from '../components/AIAssistant';
 import { mockPortfolioProjects } from '../data/mockData';
 
 export default function Home() {
