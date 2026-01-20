@@ -163,6 +163,7 @@ export const mockJobs = [
 ];
 
 export const mockCompanies = [
+  // TALENT SEEKERS - Companies hiring BIM professionals
   {
     id: 1,
     name: 'Thai Construction Group',
@@ -170,8 +171,13 @@ export const mockCompanies = [
     description: 'Leading construction company specializing in commercial and residential developments.',
     location: 'Bangkok',
     size: '500-1000',
+    companyType: 'talent_seeker',
     openPositions: 8,
-    industries: ['Commercial', 'Residential', 'Infrastructure']
+    hiringStatus: 'actively_hiring',
+    employmentTypes: ['Full-time', 'Contract'],
+    industries: ['Commercial', 'Residential', 'Infrastructure'],
+    founded: '2005',
+    website: 'https://example.com'
   },
   {
     id: 2,
@@ -180,8 +186,13 @@ export const mockCompanies = [
     description: 'Full-service engineering firm with expertise in MEP systems for high-rise buildings.',
     location: 'Bangkok',
     size: '200-500',
+    companyType: 'talent_seeker',
     openPositions: 5,
-    industries: ['Engineering', 'MEP', 'High-rise']
+    hiringStatus: 'actively_hiring',
+    employmentTypes: ['Full-time', 'Part-time'],
+    industries: ['Engineering', 'MEP', 'High-rise'],
+    founded: '2010',
+    website: 'https://example.com'
   },
   {
     id: 3,
@@ -190,8 +201,13 @@ export const mockCompanies = [
     description: 'Award-winning architectural design studio focusing on sustainable and modern architecture.',
     location: 'Bangkok',
     size: '50-100',
+    companyType: 'talent_seeker',
     openPositions: 3,
-    industries: ['Architecture', 'Design', 'Sustainable']
+    hiringStatus: 'actively_hiring',
+    employmentTypes: ['Full-time', 'Freelance'],
+    industries: ['Architecture', 'Design', 'Sustainable'],
+    founded: '2015',
+    website: 'https://example.com'
   },
   {
     id: 4,
@@ -200,8 +216,13 @@ export const mockCompanies = [
     description: 'Government contractor for major infrastructure projects including highways and bridges.',
     location: 'Multiple',
     size: '1000+',
+    companyType: 'talent_seeker',
     openPositions: 12,
-    industries: ['Infrastructure', 'Transportation', 'Government']
+    hiringStatus: 'actively_hiring',
+    employmentTypes: ['Full-time', 'Contract'],
+    industries: ['Infrastructure', 'Transportation', 'Government'],
+    founded: '2000',
+    website: 'https://example.com'
   },
   {
     id: 5,
@@ -210,18 +231,83 @@ export const mockCompanies = [
     description: 'Residential design and construction company serving clients across Northern Thailand.',
     location: 'Chiang Mai',
     size: '100-200',
+    companyType: 'talent_seeker',
     openPositions: 6,
-    industries: ['Residential', 'Design', 'Construction']
+    hiringStatus: 'actively_hiring',
+    employmentTypes: ['Full-time', 'Contract', 'Freelance'],
+    industries: ['Residential', 'Design', 'Construction'],
+    founded: '2012',
+    website: 'https://example.com'
   },
+  
+  // SERVICE PROVIDERS - Companies offering BIM services
   {
     id: 6,
     name: 'BIM Solutions Thailand',
     logo: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop',
-    description: 'BIM consulting firm helping companies implement and optimize BIM workflows.',
-    location: 'Remote',
+    description: 'Leading BIM consulting firm helping companies implement and optimize BIM workflows across Thailand.',
+    location: 'Bangkok',
     size: '20-50',
-    openPositions: 4,
-    industries: ['Consulting', 'BIM', 'Training']
+    companyType: 'service_provider',
+    services: ['BIM Consulting', 'BIM Implementation', 'Training & Education'],
+    clientTypes: ['Small Business', 'Medium Enterprise', 'Large Enterprise'],
+    certifications: ['ISO 19650', 'Autodesk Certified Partner'],
+    projectsCompleted: 150,
+    industries: ['Consulting', 'BIM', 'Training'],
+    founded: '2014',
+    website: 'https://example.com',
+    rating: 4.9
+  },
+  {
+    id: 7,
+    name: 'Digital Construction Services',
+    logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop',
+    description: 'Specialized BIM modeling and coordination services for complex infrastructure projects.',
+    location: 'Bangkok',
+    size: '10-20',
+    companyType: 'service_provider',
+    services: ['BIM Modeling', 'Clash Detection', '4D/5D Simulation', 'BIM Management'],
+    clientTypes: ['Medium Enterprise', 'Large Enterprise', 'Government'],
+    certifications: ['Bentley Authorized Training Partner', 'ISO 9001'],
+    projectsCompleted: 85,
+    industries: ['Infrastructure', 'BIM Services', 'Engineering'],
+    founded: '2016',
+    website: 'https://example.com',
+    rating: 4.7
+  },
+  {
+    id: 8,
+    name: 'BIM Academy Thailand',
+    logo: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=200&fit=crop',
+    description: 'Premier BIM training institute offering certified courses in Revit, Navisworks, and BIM management.',
+    location: 'Remote',
+    size: '5-10',
+    companyType: 'service_provider',
+    services: ['Training & Education', 'BIM Certification', 'Corporate Training'],
+    clientTypes: ['Small Business', 'Medium Enterprise', 'Individual'],
+    certifications: ['Autodesk Authorized Training Center', 'ISO 29993'],
+    projectsCompleted: 200,
+    industries: ['Education', 'Training', 'BIM'],
+    founded: '2018',
+    website: 'https://example.com',
+    rating: 4.8
+  },
+  {
+    id: 9,
+    name: 'Scan to BIM Experts',
+    logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=200&fit=crop',
+    description: 'Specialized in 3D laser scanning and as-built BIM model creation for renovation projects.',
+    location: 'Chiang Mai',
+    size: '10-20',
+    companyType: 'service_provider',
+    services: ['Scan to BIM', 'As-Built Modeling', 'Point Cloud Processing'],
+    clientTypes: ['Medium Enterprise', 'Large Enterprise'],
+    certifications: ['FARO Certified', 'Leica Geosystems Partner'],
+    projectsCompleted: 65,
+    industries: ['Surveying', 'BIM Services', 'Renovation'],
+    founded: '2019',
+    website: 'https://example.com',
+    rating: 4.6
   }
 ];
 
