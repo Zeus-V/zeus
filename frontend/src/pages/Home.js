@@ -132,6 +132,11 @@ export default function Home() {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1a1a1a] via-[#0f0f0f] to-[#1a1a1a]">
+      {/* AI Assistant Section - Top Priority */}
+      <section className="bg-black/50 border-b border-white/5 pt-8">
+        <AIAssistant />
+      </section>
+      
       {/* Hero Section with Behance-inspired Search */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Dark Construction Background */}
