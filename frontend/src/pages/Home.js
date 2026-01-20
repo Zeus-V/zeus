@@ -238,6 +238,11 @@ export default function Home() {
         </div>
       </section>
       
+      {/* AI Assistant Section */}
+      <section className="bg-black/40 border-b border-white/5">
+        <AIAssistant />
+      </section>
+      
       {/* Stats Section - Dark Construction Theme */}
       <section className="py-16 border-y border-white/5 bg-black/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
