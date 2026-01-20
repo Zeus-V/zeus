@@ -306,11 +306,6 @@ export default function Home() {
         </div>
       </section>
       
-      {/* AI Assistant Section */}
-      <section className="bg-black/40 border-t border-white/5">
-        <AIAssistant />
-      </section>
-      
       {/* Featured Portfolios Section - Behance-inspired Dark Grid */}
       <section className="py-24 bg-black/30 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
